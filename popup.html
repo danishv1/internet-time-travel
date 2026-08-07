@@ -1,0 +1,34 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  body { font: 13px system-ui; width: 240px; margin: 0; padding: 12px; }
+  label { display: flex; gap: 6px; align-items: center; }
+  button { width: 100%; margin-top: 10px; padding: 6px; }
+  #travel {
+    padding: 9px; border: 0; border-radius: 8px; cursor: pointer;
+    color: #fff; font-weight: 600; letter-spacing: .3px;
+    background: linear-gradient(135deg, #4a7dff, #9b4dff);
+    transition: transform .15s, filter .15s;
+  }
+  #travel:hover { filter: brightness(1.15); }
+  #travel:active { transform: scale(.96); }
+  #exceptions { margin-top: 14px; border-top: 1px solid #8884; padding-top: 10px; }
+  #exceptions b { font-size: 12px; }
+  #exlist { margin-top: 6px; }
+  #exlist .row { display: flex; align-items: center; justify-content: space-between; padding: 2px 0; font-size: 12px; }
+  #exlist .row button { width: auto; margin: 0; padding: 0 6px; border: 0; background: none; cursor: pointer; color: #c33; font-size: 14px; }
+  #exform { display: flex; gap: 6px; margin-top: 6px; }
+  #exform input { flex: 1; min-width: 0; padding: 4px 6px; }
+  #exform button { width: auto; margin: 0; padding: 4px 10px; }
+</style>
+<label><input type="checkbox" id="enabled"> <b>Time-travel mode</b></label>
+<label style="margin-top:10px">Today is <input type="date" id="cutoff"></label>
+<button id="travel">🚀 Start time travel</button>
+<button id="save">💾 Save</button>
+<button id="bypass" hidden></button>
+<div id="exceptions">
+  <b>Always-live sites</b>
+  <div id="exlist"></div>
+  <form id="exform"><input id="exinput" placeholder="example.com"><button type="submit">+</button></form>
+</div>
+<script src="popup.js"></script>
